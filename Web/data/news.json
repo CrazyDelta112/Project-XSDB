@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "title": "Modern Warfare 4 Beta",
+      "description": "MW4 Beta is coming this Friday!",
+      "image": "https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/body/mw4/reveal/MW4-REVEAL-TOUT.jpg"
+    },
+    {
+      "title": "VAS !!",
+      "description": "idk why i added this here xd",
+      "image": "https://cdn.discordapp.com/attachments/1424348679552241674/1539759613384200284/image.png?ex=6a877c63&is=6a862ae3&hm=4e6ed8a2934ab656d2a7e1994bdf986dd6f00030ac5859152fac0f7c3cbc45db&"
+
+    },
+    {
+      "title": "Project Released!",
+      "description": "Check out the project source on Buffersnow!",
+      "image": "https://images.steamusercontent.com/ugc/2049745156695479607/56022E01658685997540DE8AA302CDDA260DE756/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+      "action": "https://git.buffersnow.com/Delta/XSDB"
+    }
+  ]
+}

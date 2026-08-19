@@ -1,0 +1,14 @@
+<Application x:Class="XboxDashboard.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml"
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+    </Application.Resources>
+</Application>

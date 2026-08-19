@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Xbox Dashboard</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+<body data-input-mode="pointer" data-controller-connected="false">
+    <div id="dashboard-background" aria-hidden="true"></div>
+    <div id="game-background" aria-hidden="true"></div>
+    <div id="background-shade" aria-hidden="true"></div>
+
+    <div id="app">
+        <header class="dashboard-header">
+            <button id="profile-button"
+                    class="profile-button focusable"
+                    data-focus-id="profile"
+                    type="button">
+                <div class="avatar" id="profile-avatar">D</div>
+                <div class="profile-copy">
+                    <strong id="profile-name">Delta</strong>
+                    <span id="profile-handle">@Delta</span>
+                    <span id="profile-activity" class="profile-activity"></span>
+                </div>
+            </button>
+
+            <nav class="top-nav" aria-label="Primary navigation">
+                <button class="icon-button focusable active"
+                        data-page="home"
+                        data-focus-id="home"
+                        type="button"
+                        title="Home">
+                    <img src="./assets/icons/home.svg" alt="">
+                </button>
+
+                <button class="icon-button focusable"
+                        data-page="library"
+                        data-focus-id="library"
+                        type="button"
+                        title="My games and apps">
+                    <img src="./assets/icons/library.svg" alt="">
+                </button>
+
+                <button class="icon-button focusable"
+                        data-action="search"
+                        type="button"
+                        title="Search">
+                    <img src="./assets/icons/search.svg" alt="">
+                </button>
+
+
+                <button class="icon-button focusable"
+                        data-page="settings"
+                        data-focus-id="settings"
+                        type="button"
+                        title="Settings">
+                    <img src="./assets/icons/settings.svg" alt="">
+                </button>
+
+                <button class="icon-button focusable guide-button"
+                        data-action="guide"
+                        type="button"
+                        title="Guide">
+                    <img src="./assets/icons/guide.svg" alt="">
+                </button>
+            </nav>
+
+            <div class="system-status">
+                <img id="sound-indicator"
+                     class="status-icon"
+                     src="./assets/icons/sound.svg"
+                     alt="Sound">
+                <span id="clock">12:05 PM</span>
+            </div>
+        </header>
+
+        <main id="page-root"></main>
+
+        <div id="overlay-root"></div>
+        <div id="guide-root"></div>
+        <div id="toast-root"></div>
+
+        <div id="controller-hints" class="controller-hints" aria-hidden="true"></div>
+    </div>
+
+    <script src="./js/app.js"></script>
+    <script src="./js/sounds.js"></script>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/guide.js"></script>
+    <script src="./js/home.js"></script>
+    <script src="./js/library.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/settings.js"></script>
+    <script src="./js/game-editor.js"></script>
+</body>
+</html>

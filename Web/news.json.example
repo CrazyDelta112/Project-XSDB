@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "title": "Xbox Dashboard V4",
+      "description": "Example remotely controlled news card.",
+      "image": "https://example.com/news/dashboard-v4.jpg",
+      "action": "https://example.com/",
+      "publishedAt": "2026-08-19T15:00:00Z"
+    },
+    {
+      "title": "Library update",
+      "description": "Add another item by editing only this remote JSON file.",
+      "image": "https://example.com/news/library.jpg",
+      "action": "https://example.com/library",
+      "publishedAt": "2026-08-19T14:00:00Z"
+    }
+  ]
+}
