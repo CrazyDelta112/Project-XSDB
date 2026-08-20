@@ -1,60 +1,52 @@
 # XSDB
 
-XSDB is an open-source gaming dashboard for Windows focused on bringing a console-style experience to PC without replacing the tools people already use.
+XSDB is an open-source gaming dashboard for Windows built to provide a console-style experience on PC.
 
-The project is built with C# and WPF, while most of the interface is rendered through WebView2 using HTML, CSS and JavaScript. The goal is to keep the native Windows side responsible for system integration and application logic, while the web layer handles the dashboard interface.
+It combines a native C# / WPF application with a WebView2 interface written in HTML, CSS and JavaScript. The native side handles Windows integration, game launching, settings, storage and controller input, while the web layer renders the dashboard itself.
 
-XSDB is still in development. Features, file structure and behavior may change between versions.
+XSDB is still under active development, so features and behavior may change between versions.
 
-## What XSDB does
-
-XSDB is designed to act as a central place for launching and organizing games on Windows.
-
-Current functionality includes:
+## Features
 
 - Custom game library
-- Support for manually added executables
+- Manual executable support
 - Steam game detection and launching
-- Custom covers, icons and backgrounds
+- Custom game covers, icons and backgrounds
 - Profile customization
 - Controller navigation through XInput
 - Discord Rich Presence
 - Game activity detection
-- Desktop wallpaper integration for selected games
+- Desktop wallpaper integration
 - Remote news support
-- Dashboard personalization options
+- Dashboard personalization
 - Fullscreen and windowed modes
-- Local SQLite database for the game library
+- Local SQLite database
 
-The dashboard interface is intentionally inspired by console navigation, but XSDB is an independent open-source project and is not affiliated with Microsoft, Xbox, Valve, Steam, Discord, Activision or any other company whose products may be supported by the application.
-
-## Technology
-
-XSDB currently uses:
+## Built with
 
 - C#
 - .NET 8
 - WPF
-- Microsoft WebView2
+- Microsoft Edge WebView2
 - HTML, CSS and JavaScript
-- SQLite through Microsoft.Data.Sqlite
+- Microsoft.Data.Sqlite
 - DiscordRichPresence
-- XInput for controller support
-- Premake5 for Visual Studio solution generation
+- XInput
+- Premake5
 
 ## Requirements
 
-To build XSDB from source, you will need:
+To build XSDB from source you will need:
 
 - Windows 10 or Windows 11
 - .NET 8 SDK
-- Visual Studio 2022 with .NET desktop development tools
+- Visual Studio 2022 with the .NET desktop development workload
 - Premake5 if you want to generate the Visual Studio solution
 - Microsoft Edge WebView2 Runtime
 
-The NuGet dependencies are restored automatically by the .NET SDK when the project is built.
+NuGet dependencies are restored automatically by the .NET SDK.
 
-## Getting the source
+## Building from source
 
 Clone the repository:
 
@@ -63,134 +55,81 @@ git clone https://github.com/CrazyDelta112/Project-XSDB.git
 cd Project-XSDB
 ```
 
-## Generating the Visual Studio solution with Premake5
-
-XSDB includes a `premake5.lua` file so contributors can generate a Visual Studio solution instead of relying on a solution file committed to the repository.
-
-Place `premake5.exe` somewhere available in your PATH, or copy it to the repository directory, then run:
+Generate the Visual Studio 2022 solution with Premake5:
 
 ```powershell
 premake5 vs2022
 ```
 
-The generated solution will be placed in:
+The generated solution will be placed in the `Build` directory.
 
-```text
-Build/
-```
+Premake is only used to generate the solution. The existing SDK-style `.csproj` remains the main project definition for .NET, WPF and NuGet configuration.
 
-Open the generated solution with Visual Studio 2022.
-
-Premake is used only to generate the solution. The existing SDK-style `.csproj` remains the main project definition because it contains the .NET 8, WPF and NuGet configuration used by XSDB.
-
-## Building without Visual Studio
-
-You can build the project directly with the .NET CLI:
+You can also build directly with the .NET CLI:
 
 ```powershell
 dotnet restore
 dotnet build
 ```
 
-To run the development build:
+Run the development build with:
 
 ```powershell
 dotnet run
 ```
 
-## Release build
-
-A normal Release build can be created with:
+Create a Windows x64 release build with:
 
 ```powershell
 dotnet publish -c Release -r win-x64 --self-contained true -o ".\dist\XSDB"
 ```
 
-Release packaging may change while the project is under development.
-
-## Project structure
+## Project layout
 
 ```text
 Project-XSDB/
-├── Models/                 Application data models
-├── Services/               Windows integration and application services
-├── Web/                    Dashboard HTML, CSS, JavaScript and assets
-├── App.xaml                WPF application definition
-├── App.xaml.cs             WPF application startup code
-├── MainWindow.xaml         Native application window
-├── MainWindow.xaml.cs      Main bridge between WPF and the dashboard
+├── Models/
+├── Services/
+├── Web/
+├── App.xaml
+├── App.xaml.cs
+├── MainWindow.xaml
+├── MainWindow.xaml.cs
 ├── XboxDashboard.App.csproj
-├── premake5.lua            Premake5 solution generator
+├── premake5.lua
 └── README.md
 ```
 
-### Models
+`Models` contains the application data structures, `Services` contains most native application logic, and `Web` contains the dashboard interface and assets.
 
-The `Models` directory contains the data structures used by the application, including games, profile information, application settings, news entries, storage information and game activity state.
+The WebView2 interface communicates with the C# side through WebView2 messages.
 
-### Services
+## User data
 
-The `Services` directory contains most of the native application logic. This includes game management, Steam detection, SQLite access, controller input, Discord Rich Presence, wallpaper handling, Windows actions, settings, storage information and game activity tracking.
+XSDB keeps user data outside the repository and application source directory. This includes settings, profile data, the local game database and copied game assets.
 
-### Web
-
-The `Web` directory contains the dashboard interface.
-
-The interface is loaded inside WebView2 and communicates with the C# application through the WebView2 messaging API. This allows the interface to remain easy to modify while native Windows functionality stays in C#.
-
-## Application data
-
-XSDB stores user data outside the source directory.
-
-The current code stores application data under the user's roaming AppData directory. This includes the SQLite database, settings, profile data and copied game assets.
-
-Do not commit local runtime data, build output, databases or generated Visual Studio files to the repository.
+Build output, local databases, generated solution files and personal settings should not be committed.
 
 ## Contributing
 
 Contributions are welcome.
 
-If you want to modify XSDB, try to keep changes focused and understandable. For larger changes, it is usually better to explain the goal first before rewriting major parts of the project.
-
-When contributing:
-
-- Keep generated build files out of commits
-- Avoid committing personal settings or local databases
-- Keep the dashboard responsive for both mouse and controller navigation
-- Test both Debug and Release builds when possible
-- Keep native and web-side changes synchronized when modifying WebView2 messages
+Keep changes focused, avoid committing generated or personal files, and test both the native and web sides when changing communication between C# and WebView2.
 
 ## Credits
 
 XSDB was created and is maintained by Delta.
 
-The project also depends on and benefits from several open-source and platform technologies:
+The project uses and depends on technologies and libraries including Microsoft .NET, WPF, Microsoft Edge WebView2, Microsoft.Data.Sqlite, SQLite, DiscordRichPresence and Premake5.
 
-- Microsoft .NET and WPF
-- Microsoft Edge WebView2
-- Microsoft.Data.Sqlite
-- DiscordRichPresence
-- Premake5
-- SQLite
+Third-party projects remain subject to their own licenses and terms.
 
-Additional contributors should be credited here as the project grows.
+## Disclaimer
 
-## Third-party services and trademarks
+XSDB is an independent project and is not affiliated with or endorsed by Microsoft, Xbox, Valve, Steam, Discord, Activision or other third-party companies whose products or services may be supported by the application.
 
-XSDB can interact with third-party applications and services such as Steam and Discord. Their names, logos and trademarks belong to their respective owners.
-
-XSDB is not an official Xbox application and is not affiliated with or endorsed by Microsoft.
-
-The project does not attempt to replace Steam, Discord or other game platforms. It acts as a local dashboard and launcher that can integrate with supported software already installed on the user's system.
-
-## Development status
-
-XSDB is currently under active development.
-
-Some functionality may be unfinished, experimental or changed in future releases. If you are building directly from the latest source, expect occasional bugs or incomplete features.
+All trademarks and product names belong to their respective owners.
 
 ## License
 
-A license file has not been added yet.
-
-Before publishing the project as a public open-source repository, add a `LICENSE` file so contributors and users clearly know what they are allowed to do with the source code.
+XSDB is released under the MIT License. See the `LICENSE` file for details.
