@@ -1,12 +1,9 @@
-# XSDB, an Unofficial Xbox-Inspired Gaming Dashboard for Windows
+# XSDB
 
-XSDB is an unofficial community-made gaming dashboard for Windows focused on bringing a console-style experience to PC.
+XSDB is the first Xbox Series dashboard recreation with multiple features like controller support, local profile data, steam library connection, profile customization, custom wallpapers and much more.
 
-The dashboard combines a native C# / WPF application with a WebView2 interface and is designed around game launching, controller navigation, profiles, customization and a simple console-like home experience.
+XSDB is still under development.
 
-XSDB is still under development, so features and behavior may change between versions.
-
-Original project by Delta / XSDB.
 
 ## Features
 
@@ -25,14 +22,6 @@ Original project by Delta / XSDB.
 - Dashboard themes, wallpapers and accent colors
 - Fullscreen and windowed modes
 - Local SQLite database for game information
-
-## How to Use
-
-1. Launch XSDB.
-2. Add games manually or scan your installed Steam library.
-3. Customize your profile and dashboard in Settings.
-4. Connect a supported XInput controller if you want controller navigation.
-5. Select a game from Home or Library to launch it.
 
 ## Requirements
 
@@ -105,20 +94,6 @@ If you build something based on XSDB or reuse substantial parts of the project, 
 
 Do not present XSDB or a modified version in a way that suggests it is an official Microsoft or Xbox product.
 
-## Credits
-
-XSDB was created and is maintained by Delta.
-
-The project also uses or depends on:
-
-- Microsoft .NET and WPF
-- Microsoft Edge WebView2
-- Microsoft.Data.Sqlite / SQLite
-- DiscordRichPresence
-- Premake5
-- XInput
-
-Third-party projects and libraries remain subject to their own licenses and terms.
 
 ## Legal / Disclaimer
 
