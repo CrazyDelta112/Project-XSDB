@@ -254,12 +254,12 @@ function guideProfileHeader() {
             </div>
 
             <span>
-                <strong style="display:block">${escapeHtml(profile.name || "Delta")}</strong>
+                <strong style="display:block">${escapeHtml(profile.name || "User")}</strong>
                 <span style="display:block;color:var(--muted);font-size:10px;margin-top:3px">
                     ${
                         App.activity?.isPlaying
                             ? `Playing ${escapeHtml(App.activity.gameName)}`
-                            : `@${escapeHtml(profile.gamertag || profile.name || "Delta")}`
+                            : `@${escapeHtml(profile.gamertag || profile.name || "User")}`
                     }
                 </span>
             </span>

@@ -152,8 +152,8 @@ function renderLibraryProfile() {
             </div>
 
             <div class="profile-copy" style="display:flex">
-                <strong>${escapeHtml(profile.name || "Delta")}</strong>
-                <span>@${escapeHtml(profile.gamertag || profile.name || "Delta")}</span>
+                <strong>${escapeHtml(profile.name || "User")}</strong>
+                <span>@${escapeHtml(profile.gamertag || profile.name || "User")}</span>
             </div>
         </button>
     `;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\silva\\OneDrive\\Desktop\\V6\\XboxDashboard.App\\XboxDashboard.App.csproj": {}
+    "C:\\Users\\silva\\OneDrive\\Documents\\GitHub\\Project-XSDB\\XboxDashboard.App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\silva\\OneDrive\\Desktop\\V6\\XboxDashboard.App\\XboxDashboard.App.csproj": {
+    "C:\\Users\\silva\\OneDrive\\Documents\\GitHub\\Project-XSDB\\XboxDashboard.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\silva\\OneDrive\\Desktop\\V6\\XboxDashboard.App\\XboxDashboard.App.csproj",
-        "projectName": "XboxDashboard",
-        "projectPath": "C:\\Users\\silva\\OneDrive\\Desktop\\V6\\XboxDashboard.App\\XboxDashboard.App.csproj",
+        "projectUniqueName": "C:\\Users\\silva\\OneDrive\\Documents\\GitHub\\Project-XSDB\\XboxDashboard.App.csproj",
+        "projectName": "XSDB",
+        "projectPath": "C:\\Users\\silva\\OneDrive\\Documents\\GitHub\\Project-XSDB\\XboxDashboard.App.csproj",
         "packagesPath": "C:\\Users\\silva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\silva\\OneDrive\\Desktop\\V6\\XboxDashboard.App\\obj\\",
+        "outputPath": "C:\\Users\\silva\\OneDrive\\Documents\\GitHub\\Project-XSDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,6 +57,12 @@
               "target": "Package",
               "version": "[8.0.29, )"
             },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.30, )",
+              "autoReferenced": true
+            },
             "Microsoft.Web.WebView2": {
               "target": "Package",
               "version": "[1.0.4129.50, )"
@@ -79,6 +85,10 @@
               "version": "[8.0.30, 8.0.30]"
             },
             {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.30, 8.0.30]"
+            },
+            {
               "name": "Microsoft.NETCore.App.Host.win-x64",
               "version": "[8.0.30, 8.0.30]"
             },
@@ -87,7 +97,15 @@
               "version": "[8.0.30, 8.0.30]"
             },
             {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.30, 8.0.30]"
+            },
+            {
               "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.30, 8.0.30]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
               "version": "[8.0.30, 8.0.30]"
             }
           ],
@@ -100,6 +118,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }

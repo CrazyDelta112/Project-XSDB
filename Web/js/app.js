@@ -314,10 +314,10 @@ function renderProfileHeader() {
     const avatar = document.getElementById("profile-avatar");
 
     if (name)
-        name.textContent = profile.name || "Delta";
+        name.textContent = profile.name || "User";
 
     if (handle)
-        handle.textContent = `@${profile.gamertag || profile.name || "Delta"}`;
+        handle.textContent = `@${profile.gamertag || profile.name || "User"}`;
 
     const activity = document.getElementById("profile-activity");
 

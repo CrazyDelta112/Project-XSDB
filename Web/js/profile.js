@@ -24,7 +24,7 @@ function renderProfilePage() {
                 <div class="profile-info-stack">
                     <div class="profile-info-box profile-name-box">
                         <label>Gamertag</label>
-                        <strong>${escapeHtml(profile.gamertag || profile.name || "Delta")}</strong>
+                        <strong>${escapeHtml(profile.gamertag || profile.name || "User")}</strong>
                     </div>
 
                     <div class="profile-info-box">
@@ -44,7 +44,7 @@ function renderProfilePage() {
                         ${profile.avatar ? "" : escapeHtml((profile.name || "D")[0].toUpperCase())}
                     </div>
 
-                    <h2>${escapeHtml(profile.name || "Delta")}</h2>
+                    <h2>${escapeHtml(profile.name || "User")}</h2>
                     <p class="profile-live-status">
                         ${
                             App.activity?.isPlaying
@@ -117,7 +117,7 @@ function openProfileEditor() {
                             <input id="profile-display-name"
                                    class="text-input"
                                    maxlength="32"
-                                   value="${escapeAttribute(profile.name || "Delta")}">
+                                   value="${escapeAttribute(profile.name || "User")}">
                         </div>
 
                         <div class="form-group">
@@ -125,7 +125,7 @@ function openProfileEditor() {
                             <input id="profile-gamertag"
                                    class="text-input"
                                    maxlength="32"
-                                   value="${escapeAttribute(profile.gamertag || profile.name || "Delta")}">
+                                   value="${escapeAttribute(profile.gamertag || profile.name || "User")}">
                         </div>
 
                         <div class="form-group">
@@ -200,8 +200,8 @@ function setProfileTheme(theme) {
 
     App.send({
         type: "saveProfile",
-        name: profile.name || "Delta",
-        gamertag: profile.gamertag || profile.name || "Delta",
+        name: profile.name || "User",
+        gamertag: profile.gamertag || profile.name || "User",
         bio: profile.bio || "",
         location: profile.location || "",
         status: profile.status || "Online",

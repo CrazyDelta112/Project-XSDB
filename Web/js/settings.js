@@ -18,12 +18,14 @@ const dashboardWallpapers = [
     ["midnight-blue", "Midnight"],
     ["sunset", "Sunset"],
     ["carbon", "Carbon"],
+    ["gamepad", "Number one"],
+    ["gtav", "Hood Safari"],
+    ["persona", "Persona"],
+    ["xbox-og", "Project X"],
+    ["fallout", "Fallout"],
     ["tatical-move", "Tatical Move"],
-    ["jup-s6", "MWIII Season 6"],
-
-    ["tatical-move", "Tatical Move"],
-
-    ["codm-s3","CoD Mobile Season 3"]
+    ["jup-s6", "The Haunting"],
+    ["codm-s3","Fire Station"]
 ];
 
 const accentColors = [
