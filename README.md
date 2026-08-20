@@ -1,52 +1,53 @@
-# XSDB
+# XSDB, an Unofficial Xbox-Inspired Gaming Dashboard for Windows
 
-XSDB is an open-source gaming dashboard for Windows built to provide a console-style experience on PC.
+XSDB is an unofficial community-made gaming dashboard for Windows focused on bringing a console-style experience to PC.
 
-It combines a native C# / WPF application with a WebView2 interface written in HTML, CSS and JavaScript. The native side handles Windows integration, game launching, settings, storage and controller input, while the web layer renders the dashboard itself.
+The dashboard combines a native C# / WPF application with a WebView2 interface and is designed around game launching, controller navigation, profiles, customization and a simple console-like home experience.
 
-XSDB is still under active development, so features and behavior may change between versions.
+XSDB is still under development, so features and behavior may change between versions.
+
+Original project by Delta / XSDB.
 
 ## Features
 
+- Console-inspired dashboard interface
 - Custom game library
-- Manual executable support
-- Steam game detection and launching
+- Steam game scanning and launching
+- Support for manually added executables and launch links
 - Custom game covers, icons and backgrounds
-- Profile customization
-- Controller navigation through XInput
+- Local profile customization
+- Controller-first navigation with keyboard and mouse support
+- Guide-style overlay and quick actions
 - Discord Rich Presence
 - Game activity detection
-- Desktop wallpaper integration
+- Desktop wallpaper integration for selected games
 - Remote news support
-- Dashboard personalization
+- Dashboard themes, wallpapers and accent colors
 - Fullscreen and windowed modes
-- Local SQLite database
+- Local SQLite database for game information
 
-## Built with
+## How to Use
 
-- C#
-- .NET 8
-- WPF
-- Microsoft Edge WebView2
-- HTML, CSS and JavaScript
-- Microsoft.Data.Sqlite
-- DiscordRichPresence
-- XInput
-- Premake5
+1. Launch XSDB.
+2. Add games manually or scan your installed Steam library.
+3. Customize your profile and dashboard in Settings.
+4. Connect a supported XInput controller if you want controller navigation.
+5. Select a game from Home or Library to launch it.
 
 ## Requirements
 
-To build XSDB from source you will need:
+For normal use:
 
-- Windows 10 or Windows 11
+- Windows 10 or Windows 11 x64
+- Microsoft Edge WebView2 Runtime
+
+For building the project from source:
+
 - .NET 8 SDK
 - Visual Studio 2022 with the .NET desktop development workload
 - Premake5 if you want to generate the Visual Studio solution
-- Microsoft Edge WebView2 Runtime
 
-NuGet dependencies are restored automatically by the .NET SDK.
-
-## Building from source
+## Building the Project
 
 Clone the repository:
 
@@ -63,8 +64,6 @@ premake5 vs2022
 
 The generated solution will be placed in the `Build` directory.
 
-Premake is only used to generate the solution. The existing SDK-style `.csproj` remains the main project definition for .NET, WPF and NuGet configuration.
-
 You can also build directly with the .NET CLI:
 
 ```powershell
@@ -78,58 +77,55 @@ Run the development build with:
 dotnet run
 ```
 
-Create a Windows x64 release build with:
+Create the Windows x64 release build with:
 
 ```powershell
 dotnet publish -c Release -r win-x64 --self-contained true -o ".\dist\XSDB"
 ```
 
-## Project layout
+## Controls
 
-```text
-Project-XSDB/
-├── Models/
-├── Services/
-├── Web/
-├── App.xaml
-├── App.xaml.cs
-├── MainWindow.xaml
-├── MainWindow.xaml.cs
-├── XboxDashboard.App.csproj
-├── premake5.lua
-└── README.md
-```
+Controller controls may depend on the current screen, but the main navigation uses:
 
-`Models` contains the application data structures, `Services` contains most native application logic, and `Web` contains the dashboard interface and assets.
+- `A`: select / open
+- `B`: back
+- `X`: edit or context action where available
+- `Y`: search / secondary action where available
+- `LB` / `RB`: switch between main pages
+- `LT` / `RT`: scroll
+- `Menu` / Guide input: open the XSDB Guide when enabled
 
-The WebView2 interface communicates with the C# side through WebView2 messages.
+Keyboard and mouse can also be used throughout the dashboard.
 
-## User data
+## Working on the Project
 
-XSDB keeps user data outside the repository and application source directory. This includes settings, profile data, the local game database and copied game assets.
+XSDB is available for people who want to study the project, experiment with it and contribute improvements.
 
-Build output, local databases, generated solution files and personal settings should not be committed.
+If you build something based on XSDB or reuse substantial parts of the project, please keep clear credit to the original XSDB project and its creator.
 
-## Contributing
-
-Contributions are welcome.
-
-Keep changes focused, avoid committing generated or personal files, and test both the native and web sides when changing communication between C# and WebView2.
+Do not present XSDB or a modified version in a way that suggests it is an official Microsoft or Xbox product.
 
 ## Credits
 
 XSDB was created and is maintained by Delta.
 
-The project uses and depends on technologies and libraries including Microsoft .NET, WPF, Microsoft Edge WebView2, Microsoft.Data.Sqlite, SQLite, DiscordRichPresence and Premake5.
+The project also uses or depends on:
 
-Third-party projects remain subject to their own licenses and terms.
+- Microsoft .NET and WPF
+- Microsoft Edge WebView2
+- Microsoft.Data.Sqlite / SQLite
+- DiscordRichPresence
+- Premake5
+- XInput
 
-## Disclaimer
+Third-party projects and libraries remain subject to their own licenses and terms.
 
-XSDB is an independent project and is not affiliated with or endorsed by Microsoft, Xbox, Valve, Steam, Discord, Activision or other third-party companies whose products or services may be supported by the application.
+## Legal / Disclaimer
 
-All trademarks and product names belong to their respective owners.
+XSDB is an unofficial community project.
 
-## License
+It is not affiliated with, endorsed by, sponsored by, or developed by Microsoft or Xbox. It is also not affiliated with Valve, Steam, Discord, Activision, or any other third-party company whose products or services may be referenced or supported by the application.
 
-XSDB is released under the MIT License. See the `LICENSE` file for details.
+Xbox, Microsoft, Steam, Discord, Activision, and other names, logos, trademarks and related imagery belong to their respective owners.
+
+Any references to third-party platforms or products are used only to describe compatibility, integration or the visual inspiration of the project.
