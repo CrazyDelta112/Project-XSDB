@@ -13,9 +13,9 @@
     },
     {
       "title": "Project Released!",
-      "description": "Check out the project source on Buffersnow!",
+      "description": "Check out the project source on Github!",
       "image": "https://images.steamusercontent.com/ugc/2049745156695479607/56022E01658685997540DE8AA302CDDA260DE756/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
-      "action": "https://git.buffersnow.com/Delta/XSDB"
+      "action": "https://github.com/CrazyDelta112/Project-XSDB"
     }
   ]
 }
